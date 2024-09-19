@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    @apply flex items-center justify-center h-screen relative flex-col gap-5
+}
+.btn{
+    @apply  bg-emerald-700  font-bold shadow-md shadow-neutral-700 py-3 px-4 translate-y-0
+     focus:shadow-none focus:translate-y-1 text-white
+}
+.boxes{
+    @apply w-[500px] h-[500px] flex flex-row flex-wrap  justify-around
+}
+.boxes.active{
+@apply w-[600px] h-[600px]
+}
+.box{
+    @apply w-[125px] h-[125px] duration-700 ease-in bg-[url(https://compote.slate.com/images/697b023b-64a5-49a0-8059-27b963453fb1.gif)] bg-no-repeat  relative;
+    background-size: 500px 500px;
+}
+.boxes.active .box{
+    @apply rotate-[360deg]
+}
+.box::after{
+    @apply absolute content-[''] h-full w-2 bg-emerald-600 right-[-8px] top-1 skew-y-[45deg]}
+.box::before{
+    @apply absolute content-[''] h-2 w-full bg-emerald-900 bottom-[-8px] left-1 skew-x-[45deg]
+}
